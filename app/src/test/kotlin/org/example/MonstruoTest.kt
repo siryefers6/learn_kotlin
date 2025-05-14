@@ -29,7 +29,6 @@ class MonstruoTest {
                 "Certificado Chatacabra S: *"
             ),
         )
-        
-    }
 
+    }
 }
