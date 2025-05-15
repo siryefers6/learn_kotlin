@@ -7,5 +7,16 @@ class Monstruo(
     val debilidadElemental: List<String>,
     val materialesRangoBajo: List<String>,
     val materialesRangoAlto: List<String>
-)
+) {
+    fun crearPresentacionMonstruo(): String {
+        return """
+            Nombre: $nombre
+            Tipo: $tipo
+            Habitats: ${habitats.joinToString(", ")}
+            Debilidad Elemental: ${debilidadElemental.joinToString(", ")}
+            Materiales Rango Bajo: ${materialesRangoBajo.joinToString(", ")}
+            Materiales Rango Alto: ${materialesRangoAlto.joinToString(", ")}
+        """.trimIndent()
+    }
+}
 
