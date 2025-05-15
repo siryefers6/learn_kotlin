@@ -31,4 +31,38 @@ class MonstruoTest {
         )
 
     }
+
+    @Test
+    fun CrearPresentacionMonstruoTest() {
+
+        // Arrange
+        val monstruo = Monstruo(
+            nombre = "Chatacabra",
+            tipo = "Anfibio",
+            habitats = listOf("Llanos"),
+            debilidadElemental = listOf("Hielo", "Rayo"),
+            materialesRangoBajo = listOf(
+                "Caparazón de Chatacabra (romper pata): ****",
+                "Certificado Chatacabra: *"
+            ),
+            materialesRangoAlto = listOf(
+                "Coraza de Chatacabra: ****",
+            ),
+        )
+
+        // Act
+        val presentacion = monstruo.crearPresentacionMonstruo()
+        val resultadoEsperado = """
+            Nombre: Chatacabra
+            Tipo: Anfibio
+            Habitats: Llanos
+            Debilidad Elemental: Hielo, Rayo
+            Materiales Rango Bajo: Caparazón de Chatacabra (romper pata): ****, Certificado Chatacabra: *
+            Materiales Rango Alto: Coraza de Chatacabra: ****
+        """.trimIndent()
+
+        // Assert
+        assertEquals(resultadoEsperado, presentacion)
+
+    }
 }
